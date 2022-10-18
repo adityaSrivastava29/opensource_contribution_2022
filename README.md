@@ -47,8 +47,9 @@ Star the repository by pressing the topmost-right button to start your wonderful
 
 ## Awesome contributors :star_struck:
 <a href="https://github.com/adityaSrivastava29/Hacktoberfest_2022/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=adityaSrivastava29/Hacktoberfest_2022" />
+  <img src="https://contrib.rocks/image?repo=adityaSrivastava29/Hacktoberfest_2022" />
 </a>
+
 
 Made with [contributors-img](https://contributors-img.web.app).
 
