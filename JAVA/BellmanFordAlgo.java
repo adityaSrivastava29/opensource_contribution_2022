@@ -1,9 +1,7 @@
+import java.util.Arrays;
+
 // A Java program for Bellman-Ford's single source shortest
 // path algorithm.
-
-import java.io.*;
-import java.lang.*;
-import java.util.*;
 
 // A class to represent a connected, directed and weighted
 // graph
@@ -15,7 +13,7 @@ class Graph {
 		Edge() { src = dest = weight = 0; }
 	};
 
-	int V, E;
+	private int V, E;
 	Edge edge[];
 
 	// Creates a graph with V vertices and E edges
@@ -37,10 +35,9 @@ class Graph {
 		int V = graph.V, E = graph.E;
 		int dist[] = new int[V];
 
-		// Step 1: Initialize distances from src to all
-		// other vertices as INFINITE
-		for (int i = 0; i < V; ++i)
-			dist[i] = Integer.MAX_VALUE;
+		// Step 1: Initialize distances from src to all other vertices as INFINITE
+			Arrays.fill(dist, Integer.MAX_VALUE);
+			
 		dist[src] = 0;
 
 		// Step 2: Relax all edges |V| - 1 times. A simple
@@ -51,8 +48,8 @@ class Graph {
 				int u = graph.edge[j].src;
 				int v = graph.edge[j].dest;
 				int weight = graph.edge[j].weight;
-				if (dist[u] != Integer.MAX_VALUE
-					&& dist[u] + weight < dist[v])
+
+				if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v])
 					dist[v] = dist[u] + weight;
 			}
 		}
@@ -65,10 +62,9 @@ class Graph {
 			int u = graph.edge[j].src;
 			int v = graph.edge[j].dest;
 			int weight = graph.edge[j].weight;
-			if (dist[u] != Integer.MAX_VALUE
-				&& dist[u] + weight < dist[v]) {
-				System.out.println(
-					"Graph contains negative weight cycle");
+
+			if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+				System.out.println("Graph contains negative weight cycle");
 				return;
 			}
 		}
